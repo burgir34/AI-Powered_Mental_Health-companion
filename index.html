@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Head Space</title>
+  
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Link to the JavaScript file -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Head Space</h1>
+  </header>
+
+  <main>
+    <nav>
+      <button class="nav-btn" onclick="showFeature('chatbot')">Chat with Tessa</button>
+      <button class="nav-btn" onclick="showFeature('moodTracker')">Mood Tracker</button>
+      <button class="nav-btn" onclick="showFeature('breathing')">Breathing Exercises</button>
+      <button class="nav-btn" onclick="showFeature('waterTracker')">Water Tracker</button>
+      <button class="nav-btn" onclick="showFeature('positivity')">Positive Reinforcement</button>
+      <button class="nav-btn" onclick="showFeature('sos')">SOS</button>
+    </nav>
+
+    <section id="features">
+      <!-- Chatbot Feature -->
+      <div id="chatbot" class="feature">
+        <h2>Chat with Tessa</h2>
+        <div id="chatbox">
+          <div id="messages"></div>
+          <input id="userMessage" type="text" placeholder="Type your message..." />
+          <button class="action-btn" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+
+      <!-- Mood Tracker Feature -->
+      <div id="moodTracker" class="feature hidden">
+        <h2>Mood Tracker</h2>
+        <p>Select your current mood:</p>
+        <select id="moodOptions">
+          <option value="Happy">Happy</option>
+          <option value="Sad">Sad</option>
+          <option value="Anxious">Anxious</option>
+          <option value="Excited">Excited</option>
+          <option value="Tired">Tired</option>
+        </select>
+        <button class="action-btn" onclick="trackMood()">Track Mood</button>
+        <div id="moodLog"></div>
+      </div>
+
+      <!-- Breathing Exercise Feature -->
+      <div id="breathing" class="feature hidden">
+        <h2>Breathing Exercises</h2>
+        <p>Breathe in... Hold... Breathe out...</p>
+        <button class="action-btn" onclick="startBreathing()">Start Exercise</button>
+        <div id="breathingTimer"></div>
+      </div>
+
+      <!-- Water Tracker Feature -->
+      <div id="waterTracker" class="feature hidden">
+        <h2>Water Tracker</h2>
+        <p>Track your water intake:</p>
+        <button class="action-btn" onclick="addWater()">Add a Glass</button>
+        <p>Glasses of water today: <span id="waterCount">0</span></p>
+      </div>
+
+      <!-- Positive Reinforcement Feature -->
+      <div id="positivity" class="feature hidden">
+        <h2>Positive Reinforcement</h2>
+        <button class="action-btn" onclick="getPositiveMessage()">Get a Positive Message</button>
+        <p id="positiveMessage"></p>
+      </div>
+
+      <!-- SOS Feature -->
+      <div id="sos" class="feature hidden">
+        <h2>SOS - Emergency Help</h2>
+        <p>If you're feeling overwhelmed, please reach out to someone for help. Below are some resources:</p>
+        <ul>
+          <li>National Helpline: <a href="tel:+18001234567">1-800-123-4567</a></li>
+          <li>Mental Health Helpline: <a href="tel:+18007654321">1-800-765-4321</a></li>
+          <li>Help Desk Email: <a href="mailto:headspace@gmail.com">headspace@gmail.com</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
